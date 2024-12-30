@@ -1,0 +1,15 @@
+services:
+  reubah:
+    image: ghcr.io/dendianugerah/reubah:latest
+    container_name: reubah
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./tmp:/app/tmp
+      - doc-temp:/tmp
+    environment:
+      - PORT=8081
+    restart: unless-stopped 
+
+volumes:
+  doc-temp: 
